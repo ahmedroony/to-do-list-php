@@ -1,0 +1,16 @@
+{
+    "name": "to-do-list/ahmed",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "ToDoList\\Ahmed\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ahmed sayed",
+            "email": "roonya973@gmail.com"
+        }
+    ],
+    "require": {}
+}
