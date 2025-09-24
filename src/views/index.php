@@ -1,4 +1,4 @@
 <?php
     require("vendor/autoload.php");
-    echo 'hello1111';
+    require_once("src/UI/main.php");
 ?>
