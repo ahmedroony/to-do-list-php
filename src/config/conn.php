@@ -1,4 +1,5 @@
 <?php
+namespace Ahmed\config;
     $servername = "%todolist";
     $username = "ahmed1";
     $password = "123456789";
@@ -10,4 +11,10 @@
     $conn->close();
     //create DB
     $sql = "CREATE DATABASE %todolist";
+    if($conn->query($sql) === TRUE){    
+        echo "db created";
+    }else{
+        echo "failed to create db";
+    }
+    $conn->close();
 ?>
