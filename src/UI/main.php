@@ -82,7 +82,10 @@
     <h2>To-Do List</h2>
 
     <form>
-      <input type="text" placeholder="Add new task..." required>
+      <?php if (isset($errors)) {
+         ?> <P><?php echo $errors;?></p> 
+         <?php }?>
+      <input type="text" placeholder="Add new task..." name="task">
       <button type="submit">Add</button>
     </form>
 

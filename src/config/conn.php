@@ -1,9 +1,17 @@
 <?php
-    $servername = "localhost";
-    $username = "ahmed22";
-    $password = "123456789";
-    $conn = new mysqli($servername , $username , $password);
-    if($conn->connect_error){
+class conn {
+       public $servername;
+       public $username;
+       public $password;
+   public function __construct($servername,$username,$password)
+   {
+        $this->servername  = $servername;
+        $this->username = $username;
+        $this->password = $password;
+   }
+   public function connect(){
+    $conn = new mysqli($this->servername , $this->username , $this->password);
+    if($this->$conn->connect_error){
         die("connection failed" . $conn->connect_error);
     }
     echo "connected successfully";
@@ -15,4 +23,8 @@
         echo "failed to create db";
     }
     $conn->close();
+   }
+}
+$connOne = new conn("localhost","ahmed22","123456789");
+$connOne->connect();
 ?>
