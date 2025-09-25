@@ -1,8 +1,7 @@
 <?php
-namespace ToDoList\Ahmed\src\config;
-    require_once("src/config/conn.php");
+namespace ToDoList\Ahmed\config;
     $Tasks = "CREATE TABLE Task(
-    ID INT AUTO_INCREMENT  PRIMARY KEY
+    ID INT AUTO_INCREMENT  PRIMARY KEY,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
     //check the errors
     $errors = "";
@@ -10,7 +9,7 @@ namespace ToDoList\Ahmed\src\config;
         $errors = "you must fill the task";
     }else{
         $task = $_POST['task'];
-        $sql  = "INSERT INTO Tasks (task) VALUES ('$task')";
-        header('location:src/views/index.php');
+        $sql  = "INSERT INTO Task (task) VALUES ('$task')";
+        header('location:src/public/index.php');
     }
 ?>

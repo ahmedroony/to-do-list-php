@@ -1,4 +1,5 @@
 <?php
+namespace ToDoList\Ahmed\config;
 class conn {
        public $servername;
        public $username;
@@ -16,7 +17,7 @@ class conn {
     }
     echo "connected successfully";
     //create DB
-    $sql = "CREATE DATABASE todolist2";
+    $sql = "CREATE DATABASE IF NOT EXISTS todolist2";
     if($conn->query($sql) === TRUE){    
         echo "db created";
     }else{
