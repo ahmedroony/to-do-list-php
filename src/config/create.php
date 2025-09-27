@@ -7,7 +7,7 @@ class Create extends Conn{
     `id` int(10) NOT NULL,
     `task` VARCHAR(255)NOT NULL,PRIMARY KEY (`id`)) 
     ENGINE= InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
-    $result = mysqli_query($this->conn, $Tasks);
+    $result = mysqli_query(conn, $Tasks);
     
     // $errors = "";
     // if(!isset($_POST['submit'])){
