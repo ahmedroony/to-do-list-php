@@ -1,7 +1,13 @@
 <?php
 require __DIR__ . "/../../vendor/autoload.php";
 
-use ToDoList\Ahmed\config\conn;
+use ToDoList\Ahmed\config\Conn;
+use ToDoList\Ahmed\config\Create;
 
-$userOne = new conn();
-// require_once("src/UI/main.php");
+$userOne = new Conn();
+$userOne->Conn();
+
+$userOn = new Create();
+$userOn->Create();
+
+require_once("src/UI/main.php");

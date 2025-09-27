@@ -105,7 +105,12 @@
         </div>
       </li>
       <li>
-        <span>Practice MySQL</span>
+        <span>
+          <!-- <?php
+          $tasks = mysqli_query($conn,'SELECT * FROM Task');
+          
+          ?> -->
+        </span>
         <div class="actions">
           <button>✔</button>
           <button>🗑</button>

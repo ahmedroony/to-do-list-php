@@ -1,15 +1,23 @@
 <?php
 namespace ToDoList\Ahmed\config;
-    $Tasks = "CREATE TABLE Task(
-    ID INT AUTO_INCREMENT  PRIMARY KEY,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP)";
-    //check the errors
-    $errors = "";
-    if(!isset($_POST['submit'])){
-        $errors = "you must fill the task";
-    }else{
-        $task = $_POST['task'];
-        $sql  = "INSERT INTO Task (task) VALUES ('$task')";
-        header('location:src/public/index.php');
+require_once('src/config/Conn.php');
+class Create extends Conn{
+    public function Create(){
+    $Tasks = "CREATE TABLE `tasks` (
+    `id` int(10) NOT NULL,
+    `task` VARCHAR(255)NOT NULL,PRIMARY KEY (`id`)) 
+    ENGINE= InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
+    $result = mysqli_query($this->conn, $Tasks);
+    
+    // $errors = "";
+    // if(!isset($_POST['submit'])){
+    //     $errors = "you must fill the task";
+    // }else{
+    //     $task = $_POST['task'];
+    //     $sql  = "INSERT INTO Tasks (task) VALUES ('$task')";
+    //     header('location:src/public/index.php');
+    //     }
+        // return $sql;
     }
-?>
+}
+
