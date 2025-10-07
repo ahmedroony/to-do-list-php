@@ -1,27 +1,22 @@
 <?php
 namespace ToDoList\Ahmed\Core\Database;
-class DB {
-    //new construct feature in php 8 
-    public function __construct
-    (
-    private $hostname ,
-    private $username ,
-    private $password ,
-    private $database ,
-    ){
 
-    }
-    private function conn(){
-        $conn = new \mysqli(
-            $this->hostname,
-            $this->username,
-            $this->password,
-            $this->database
+use mysqli;
+use ToDoList\Ahmed\Config\DbConfig;
+
+class DB
+{
+    public function conn(){
+        $ConfigOne = new DbConfig();
+        return new mysqli(
+            $ConfigOne->hostname,
+            $ConfigOne->username,
+            $ConfigOne->password,
+            $ConfigOne->servername, 
         );
-        return $conn;
     }
-    public function create($sql){
-        $this->conn()->query($sql);
-        $this->conn()->close();
+    public function query($sql){
+        return $this->conn()->query($sql);
     }
 }
+

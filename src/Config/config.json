@@ -1,0 +1,8 @@
+{
+  "database": {
+    "hostname": "localhost",
+    "username": "ahmed22",
+    "password": "",
+    "servername": "todolist"
+  }
+}
