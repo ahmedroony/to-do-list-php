@@ -6,7 +6,7 @@ use ToDoList\Ahmed\Config\DbConfig;
 
 class DB
 {
-    public function conn(){
+    public static function conn(){
         $ConfigOne = new DbConfig();
         return new mysqli(
             $ConfigOne->hostname,
@@ -15,8 +15,8 @@ class DB
             $ConfigOne->servername, 
         );
     }
-    public function query($sql){
-        return $this->conn()->query($sql);
+    public static function query($sql){
+        return self::conn()->query($sql);
     }
 }
 
