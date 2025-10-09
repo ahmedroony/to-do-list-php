@@ -16,3 +16,9 @@ function redirect($url){
     die();
 }
 
+function dd($value=''){
+    echo"<pre>";
+    print_r($value);
+    die();
+}
+
