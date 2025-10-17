@@ -1,32 +1,36 @@
 <?php
 namespace ToDoList\Ahmed\Config;
-
-use Exception;
+use ToDoList\Ahmed\GeneralConstants\Constant;
 class DbConfig
 {
     public $hostname;
     public $username;
     public $password;
-    public $database;
+    public $dbname;
     function __construct()
     {
         $config = $this->readConfigFile();
         $this->hostname = $config->database->hostname;
         $this->username = $config->database->username;
         $this->password = $config->database->password;
-        $this->database= $config->database->database;
+        $this->dbname = $config->database->dbname;
     }
-    private function readConfigFile()
+    public function readConfigFile()
     {
-        $fileContent = file_get_contents(path('Config/config.json'));
-        return json_decode($fileContent);
+        //read the file as string
+        $readConfigFile = file_get_contents(Constant::CONFIG_File_Path());// if the path change what should we do 
+        //return the file as associative arrays
+        if ($readConfigFile) {
+            $arrayConfig = json_decode($readConfigFile);
+        }
+        return $arrayConfig;
     }
     public function showConfig(){
         return[
             "hostname" =>$this->hostname,
             "username" =>$this->username,
             "password" =>$this->password,
-            "servername"=>$this->database
+            "servername"=>$this->dbname
         ];
     }
 }

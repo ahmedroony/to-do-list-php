@@ -15,10 +15,8 @@ function redirect($url){
     header('location: ' . url($url));
     die();
 }
-
-function dd($value=''){
-    echo"<pre>";
-    print_r($value);
-    die();
+function dd($value){
+    echo "<pre>";
+     print_r($value);
+     die();
 }
-

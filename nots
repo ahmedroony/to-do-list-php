@@ -1,3 +1,8 @@
 -Data Class
 -() => named call
 -Boilerplate code: in programming refers to sections of code that are repeated in multiple places with little or no modification, serving as a standard template for common tasks or structures
+-Glue code:
+-strategy pattern
+-Dependency Injection: single form of inversion of control
+-inversion of control:
+-solid principles

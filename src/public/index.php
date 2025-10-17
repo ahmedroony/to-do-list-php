@@ -1,15 +1,7 @@
 <?php
-
-use ToDoList\Ahmed\Core\Route\Request;
-use ToDoList\Ahmed\Model\TaskModel;
-
-require __DIR__ . '/../../vendor/autoload.php';
-
-Request::handle();
-
-
-TaskModel::create([
-    'title'=> 'kkfdjs',
-    'completed'=> true,
-]);
-
+use ToDoList\Ahmed\Core\Database\DB;
+use ToDoList\Ahmed\Config\DbConfig;
+require __DIR__  . '/../../vendor/autoload.php';
+$One = new DbConfig;
+print_r($One->readConfigFile())
+?>
