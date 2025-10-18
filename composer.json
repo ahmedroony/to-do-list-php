@@ -6,7 +6,7 @@
             "ToDoList\\Ahmed\\": "src/"
         },
         "files": 
-        ["src/Core/Helper/basic.php"]
+        ["src/Core/Helper/basic.php","src/GeneralConstants/Constant.php"]
     },
     "authors": [
         {

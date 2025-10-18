@@ -1,9 +1,7 @@
 <?php
 namespace ToDoList\Ahmed\Core\Database;
-
 use mysqli;
 use ToDoList\Ahmed\Config\DbConfig;
-
 class DB
 {
     public static function conn(){
@@ -12,7 +10,7 @@ class DB
             $ConfigOne->hostname,
             $ConfigOne->username,
             $ConfigOne->password,
-            $ConfigOne->servername, 
+            $ConfigOne->dbname, 
         );
     }
     public static function query($sql){
