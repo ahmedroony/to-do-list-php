@@ -20,7 +20,10 @@ class DbConfig
         //read the file as string
         $readConfigFile = file_get_contents(Constant::CONFIG_File_Path());// if the path change what should we do 
         //return the file as associative arrays
-        return $arrayConfig = json_decode($readConfigFile); 
+        if ($readConfigFile) {
+            $arrayConfig = json_decode($readConfigFile);
+        }
+        return $arrayConfig;
     }
     public function showConfig(){
         return[
