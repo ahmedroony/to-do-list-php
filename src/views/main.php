@@ -80,7 +80,11 @@
 <body>
   <div class="container">
     <h2>To-Do List</h2>
+
     <form>
+      <?php if (isset($errors)) {
+         ?> <P><?php echo $errors;?></p> 
+         <?php }?>
       <input type="text" placeholder="Add new task..." name="task">
       <button type="submit">Add</button>
     </form>
@@ -102,6 +106,10 @@
       </li>
       <li>
         <span>
+          <!-- <?php
+          $tasks = mysqli_query($conn,'SELECT * FROM Task');
+          
+          ?> -->
         </span>
         <div class="actions">
           <button>✔</button>
