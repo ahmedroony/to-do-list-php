@@ -1,5 +1,7 @@
 <?php
 use ToDoList\Ahmed\Core\Database\DB;
 use ToDoList\Ahmed\Config\DbConfig;
-$DbOne = new DB;
+use ToDoList\Ahmed\route\request;
+require __DIR__ . '/../../vendor/autoload.php';
+request::handle();
 ?>
