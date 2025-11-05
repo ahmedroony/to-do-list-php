@@ -7,10 +7,8 @@
 </head>
 <body>
     <ul>
-        <li>
-            <a href="<?php echo url('ToDoList')?>">ToDoList</a>
-        </li>
     </ul>
     <h1>Home</h1>
+    <a href="<?= url('create') ?>">add new task</a>
 </body>
 </html>
