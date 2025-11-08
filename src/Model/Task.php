@@ -21,4 +21,7 @@ class Task{
       }
       return $tasks;
    }
+   public static function create(array $data){
+       DB::table('tasks')->insert($data)->exec();
+   }
 }

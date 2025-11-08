@@ -54,6 +54,7 @@ class DB
     }
     public function exec(){
         $this->conn()->query($this->sql);
+        return $this;
     }
 }
 
