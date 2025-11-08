@@ -1,8 +1,8 @@
 {
   "database": {
-    "hostname": "localhost",
-    "username": "ahmed22",
+    "hostname": "ahmed",
+    "username": "ahmed",
     "password": "",
-    "dbname": "todolist"
+    "dbname": "tasks"
   }
 }

@@ -4,7 +4,9 @@ use mysqli;
 use ToDoList\Ahmed\Config\DbConfig;
 class DB
 {
-    public static function conn(){
+    private string $sql = '';
+    private function __construct(private $table = '',){}
+    private static function conn(){
         $ConfigOne = new DbConfig();
         return new mysqli(
             $ConfigOne->hostname,
@@ -13,8 +15,45 @@ class DB
             $ConfigOne->dbname, 
         );
     }
-    public static function query($sql){
-        return self::conn()->query($sql);
+    public static function table(string $table){
+        return new self($table);
+    }
+    public function select($selection = ''){
+        if($selection){
+            $this->sql = "SELECT $selection FROM $this->table";
+        }else{
+            $this->sql = "SELECT * FROM $this->table";
+        }
+        return $this;
+    }
+    public function insert(array $data){
+        $columns = "";
+        $values = "";
+        foreach($data as $key => $value){
+            $columns .= $key . ',';
+            $values .="'". $value .'\' ,';
+        }
+        $this->sql = "INSERT INTO $this->table ($columns) VALUES ($values)";
+        return $this;
+    }
+    public function updata($id, array $data){
+        $set = '';
+        foreach($data as $key => $value){
+            $set .= $key . '=' . "'" . $value . '\'';
+        }
+        $this->sql = "UPDATE table_name SET $set WHERE id = $id";
+        return $this;
+    }
+    public function where($where){
+        $this->sql .= " WHERE $where";
+        return $this;
+    }
+    public function delete($id){
+        $this->sql .= "DELETE FROM $this->table WHERE id = $id ";
+        return $this;
+    }
+    public function exec(){
+        $this->conn()->query($this->sql);
     }
 }
 

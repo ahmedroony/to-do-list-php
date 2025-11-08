@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <h4>form</h4>
-    <br>
-    <form action="<?=$action?>" method="get">
-        <input type="text" name="title">
-        <input type="submit" value="save">
-    </form>
+    <h3>show</h3>
 </body>
 </html>
