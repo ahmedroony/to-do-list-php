@@ -20,7 +20,9 @@
             <th>delete</th>
         </tr>
         <tr>
-            <td>empty</td>
+            <td><?php
+            
+            ?></td>
             <td>empty</td>
             <td>empty</td>
             <td><a href="<?= url('show')  ?>">show</a></td>

@@ -26,13 +26,16 @@ class DB
         }
         return $this;
     }
-    public function insert(array $data){
+    public function insert(array $data)
+    {
         $columns = "";
         $values = "";
-        foreach($data as $key => $value){
+        foreach ($data as $key => $value) {
             $columns .= $key . ',';
-            $values .="'". $value .'\' ,';
+            $values .= "'" . $value . '\',';
         }
+        $columns = trim($columns, ',');
+        $values = trim($values, ',');
         $this->sql = "INSERT INTO $this->table ($columns) VALUES ($values)";
         return $this;
     }
