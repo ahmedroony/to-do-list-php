@@ -59,5 +59,12 @@ class DB
         $this->conn()->query($this->sql);
         return $this;
     }
+    public function fetchdata(){
+        $result = $this->conn()->query($this->sql);
+        if($result){
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+        return [];
+    }
 }
 

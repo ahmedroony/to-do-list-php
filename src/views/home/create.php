@@ -10,7 +10,7 @@
 <body>
     <h4>form</h4>
     <br>
-    <form action="<?=$action?>" method="get">
+    <form action="<?=$action?>" method="post">
         <input type="text" name="title">
         <input type="submit" value="save">
     </form>
