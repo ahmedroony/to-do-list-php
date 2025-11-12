@@ -21,10 +21,14 @@ class HomeController
     }
     public function edit()
     {
-        $action = url('update');
+        $id = $_GET['id'];
+        if($id){
+            $task=DB::table('tasks')->select()->where("id = $id")->exec()->fetchdata();
+            $task = $task[0];
+        }
+        $action = url('update?id=' . $id);
         include path('/views/home/edit.php');
     }
-
     public function store()
     {
         if (isset($_POST['title']) && $_POST['title'] !== '') {
@@ -40,10 +44,24 @@ class HomeController
 
     public function update()
     {
+        $id = $_GET['id'];
+
+        if($id && isset($_POST['title'])){
+            $isdone = isset($_POST['isdone']) ? 1 : 0;
+            
+            DB::table('tasks')->updata($id,[
+                'title'=>$_POST['title'],
+                'isdone'=>$isdone
+            ])->exec();
+        }
         redirect('/');
     }
     public function destroy()
     {
+        $id = $_GET['id'];
+        if($id){
+            DB::table('tasks')->delete($id)->exec();
+        }
         redirect('/');
     }
 }

@@ -42,9 +42,10 @@ class DB
     public function updata($id, array $data){
         $set = '';
         foreach($data as $key => $value){
-            $set .= $key . '=' . "'" . $value . '\'';
+            $set .= "$key='$value',";
         }
-        $this->sql = "UPDATE table_name SET $set WHERE id = $id";
+        $set = rtrim($set,', ');
+        $this->sql = "UPDATE $this->table SET $set WHERE id = $id";
         return $this;
     }
     public function where($where){

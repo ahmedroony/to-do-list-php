@@ -29,8 +29,8 @@
                 <td><?= htmlspecialchars($task['title']) ?></td>
                 <td><?= $task['isdone'] ? 'done' : 'notdone' ?></td>
                 <td><a href="<?= url('show') ?>">show</a></td>
-                <td><a href="<?= url('edit') ?>">edit</a></td>
-                <td><a href="<?= url('destroy') ?>">delete</a></td>
+                <td><a href="<?= url('edit?id=' . $task['id']) ?>">edit</a></td>
+                <td><a href="<?= url('destroy?id=' .$task['id'])?>">delete</a></td>
             </tr>
             <?php endforeach;?>
             <?php else: ?>
