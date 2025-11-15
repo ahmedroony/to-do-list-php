@@ -21,7 +21,6 @@ class HomeController
             die("error :task id missing");
         }
         $id = $_GET['id'];
-        
             $task = DB::table('tasks')->select()->where("id=$id")->exec()->fetchdata();
             if(!$task){
                 die("error :task not found");
