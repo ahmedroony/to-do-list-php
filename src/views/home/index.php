@@ -188,7 +188,7 @@
                 <td><?= htmlspecialchars($task['id']) ?></td>
                 <td><?= htmlspecialchars($task['title']) ?></td>
                 <td><?= $task['isdone'] ? 'done' : 'notdone' ?></td>
-                <td><a class="btn btn-show" href="<?= url('show?id=' . $task['id'])?>">show</a></td>
+                <td><a class="btn btn-show" href="<?= url('show?id=' . $task['id']) ?>">show</a></td>
                 <td><a class="btn btn-edit " href="<?= url('edit?id=' . $task['id']) ?>">edit</a></td>
                 <td><a class="btn btn-delete " href="<?= url('destroy?id=' . $task['id']) ?>">delete</a></td>
             </tr>

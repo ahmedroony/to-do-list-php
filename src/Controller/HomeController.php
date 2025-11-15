@@ -17,15 +17,16 @@ class HomeController
     }
     public function show()
     {
-        if(!isset($_GET['id'])){
-            die("error :task id missing");
-        }
         $id = $_GET['id'];
-            $task = DB::table('tasks')->select()->where("id=$id")->exec()->fetchdata();
-            if(!$task){
-                die("error :task not found");
-            }
+        if ($id) {
+            $task = DB::table('tasks')
+                ->select()
+                ->where("id = $id")
+                ->exec()
+                ->fetchdata();
             $task = $task[0];
+        }
+        
         include path('/views/home/show.php');
     }
     public function edit()

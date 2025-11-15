@@ -57,7 +57,16 @@
 </head>
 </head>
 <body>
-    <h3>show</h3>
-    <a href="<?= url('show?id=' . $task['id']) ?>">Show</a>
+    <h3></h3>
+    <div class="card">
+        <h2><?php echo htmlspecialchars($task['title']); ?></h2>
+        <?php if ($task['isdone']):?>
+            <div class="status done">Completed</div>
+        <?php else: ?>
+            <div class="status not-done">Pending</div>
+        <?php endif; ?>
+        <br>
+        <a href="<?php echo url('/'); ?>">Back to Home</a>
+    </div>
 </body>
 </html>
